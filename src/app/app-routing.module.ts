@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: "", redirectTo: "login", pathMatch: 'full' },
   { path: "login", component: LoginComponent },
   {
-    path: "admin", component: IndexComponent, children: [
+    path: "admin", component: IndexComponent,  children: [
       { path: "produtos", component: ProdutoslistComponent },
       { path: "pedidos", component: PedidoslistComponent },
     ]
@@ -18,7 +18,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+  })
+
 export class AppRoutingModule { }

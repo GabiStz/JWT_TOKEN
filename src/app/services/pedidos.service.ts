@@ -1,5 +1,6 @@
 import { Injectable, inject } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+
+import * as http from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pedido } from '../models/pedido';
 
@@ -9,7 +10,7 @@ import { Pedido } from '../models/pedido';
 export class PedidosService {
 
   API: string = 'http://localhost:8080/api/pedido';
-  http = inject(HttpClient);
+  http = inject(http.HttpClient);
 
   constructor() { }
 
