@@ -1,16 +1,17 @@
 import { Injectable, inject } from '@angular/core';
 
-import * as http from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pedido } from '../models/pedido';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class PedidosService {
 
   API: string = 'http://localhost:8080/api/pedido';
-  http = inject(http.HttpClient);
+  http = inject(HttpClient);
 
   constructor() { }
 
