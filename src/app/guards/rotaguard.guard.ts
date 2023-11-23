@@ -1,5 +1,18 @@
-import { CanActivateFn } from '@angular/router';
+import { inject } from '@angular/core';
+import { CanActivateFn, Router } from '@angular/router';
+import { LoginserviceService } from '../services/loginservice.service';
 
 export const rotaguardGuard: CanActivateFn = (route, state) => {
-  return true;
+  let loginService = inject(LoginserviceService);
+  let roteador = inject(Router);
+
+
+  if (loginService.getToken() == null){
+    roteador.navigate(["/login"])
+    return false;
+  }else{
+    return true;
+
+  }   
+  
 };
