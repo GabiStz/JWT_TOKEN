@@ -33,7 +33,7 @@ export class LoginserviceService {
   getToken(){
   return localStorage.getItem("token");
   }
-
+//hasPermission determina se o usuario ou sistema tem autorização necessaria para realizar uma especifica ação
   hasPermission(role: string){
     if(role == "ADMIN"){
       return true;
